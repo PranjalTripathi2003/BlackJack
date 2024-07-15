@@ -1,0 +1,81 @@
+/* blackjack-client/src/App.css */
+
+body {
+  background-color: #00203f;
+  color: #adefd1;
+  font-family: sans-serif;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  background-color: #adefd1;
+  color: #00203f;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00203f;
+  color: #adefd1;
+}
+
+.winner-message {
+  color: #ff5555;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 20px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ma {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h2,
+p {
+  color: #00203f;
+}
+
+.playerside {
+  padding: 2%;
+  background-color: #adefd1;
+  color: #00203f;
+  width: fit-content;
+  margin: 2%;
+  border-radius: 35px;
+}
+
+.dealerside {
+  width: fit-content;
+  margin: 2%;
+  border-radius: 35px;
+  padding: 2%;
+  background-color: #adefd1;
+  color: #00203f;
+}
