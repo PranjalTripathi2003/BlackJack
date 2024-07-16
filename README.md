@@ -60,5 +60,3 @@ Welcome to the Blackjack Game! This is a simple web-based Blackjack game that's 
    * Open your web browser and go to `http://localhost:5000`.
 
 Enjoy playing Blackjack!
-```
-
