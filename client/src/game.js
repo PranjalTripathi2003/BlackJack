@@ -1,5 +1,3 @@
-// blackjack-client/src/Game.js
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
@@ -11,7 +9,7 @@ const Game = () => {
   useEffect(() => {
     // Fetch initial game state when the component mounts
     axios
-      .post("http://localhost:5000/game/start")
+      .post("https://blackjack-game-bnnn.onrender.com/game/start")
       .then((response) => setGameState(response.data))
       .catch((error) => console.error("Error starting a new game:", error));
   }, []);
@@ -19,7 +17,7 @@ const Game = () => {
   const handleHit = () => {
     // Implement logic for the player to hit
     axios
-      .post("http://localhost:5000/game/hit", { gameId: gameState._id })
+      .post("https://blackjack-game-bnnn.onrender.com/game/hit", { gameId: gameState._id })
       .then((response) => {
         setGameState(response.data);
         checkWinner(response.data.winner);
@@ -30,7 +28,7 @@ const Game = () => {
   const handleStand = () => {
     // Implement logic for the player to stand
     axios
-      .post("http://localhost:5000/game/stand", { gameId: gameState._id })
+      .post("https://blackjack-game-bnnn.onrender.com/game/stand", { gameId: gameState._id })
       .then((response) => {
         setGameState(response.data);
         checkWinner(response.data.winner);
@@ -42,7 +40,7 @@ const Game = () => {
     // Implement logic to start a new game
     setWinnerMessage(""); // Clear the winner message
     axios
-      .post("http://localhost:5000/game/start")
+      .post("https://blackjack-game-bnnn.onrender.com/game/start")
       .then((response) => setGameState(response.data))
       .catch((error) => console.error("Error starting a new game:", error));
   };
@@ -60,7 +58,7 @@ const Game = () => {
       {gameState ? (
         <>
           <h1>Blackjack Game</h1>
-          {winnerMessage && <p className="winner-message">{winnerMessage} </p>}
+          {winnerMessage && <p className="winner-message">{winnerMessage}</p>}
           <div className="ma">
             <div className="playerside">
               <h2>Player Hand:</h2>
@@ -88,11 +86,10 @@ const Game = () => {
           <div className="buttons">
             <button onClick={handleHit}>Hit</button>
             <button onClick={handleStand}>Stand</button>
-            <button onClick={startNewGame}>Start New Game</button>
           </div>
         </>
       ) : (
-        <p>Loading...</p>
+        <button onClick={startNewGame}>Start New Game</button>
       )}
     </div>
   );
